@@ -1,0 +1,15 @@
+<div class="child-page-list">
+    <ul data-sly-use.model="com.buyzon.core.models.PageListModel"
+        data-sly-list.item="${model.childPages}">
+        <li>
+            <a href="${item.path}">${item.title}</a>
+            <small>
+                (Index: ${itemList.index},
+                Count: ${itemList.count},
+                ${itemList.odd ? 'Odd' : 'Even'},
+                ${itemList.first ? 'First' : ''}
+                ${itemList.last ? 'Last' : ''})
+            </small>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/buyzon",
+        "create path (nt:unstructured) /content/dam/buyzon/jcr:content",
+        "set properties on /content/dam/buyzon/jcr:content\n  set cq:conf{String} to /conf/buyzon\n  set jcr:title{String} to \"Buyzon\"\nend"
+    ]
+}

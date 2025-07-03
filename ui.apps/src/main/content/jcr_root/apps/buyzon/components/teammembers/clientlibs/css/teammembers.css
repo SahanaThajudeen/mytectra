@@ -1,0 +1,11 @@
+.coral-Form-fieldset {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.coral-Form-fieldset legend {
+    font-weight: bold;
+    color: #333;
+}

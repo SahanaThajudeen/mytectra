@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/buyzon" mode="merge"/>
+    <filter root="/content/buyzon" mode="merge"/>
+    <filter root="/content/dam/buyzon" mode="merge">
+        <exclude pattern="/content/dam/buyzon(/.*)?"/>
+        <include pattern="/content/dam/buyzon/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/buyzon/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/buyzon" mode="merge"/>
+</workspaceFilter>

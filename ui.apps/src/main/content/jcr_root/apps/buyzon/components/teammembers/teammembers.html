@@ -1,0 +1,29 @@
+<div class="team">
+    <ul data-sly-use.model="com.buyzon.core.models.TeamMembersModel">
+        <strong>${model.message}</strong>
+        <li data-sly-list.member="${model.teamMembers}">
+            <strong>${member.name}</strong> - ${member.role}
+            <ul data-sly-list.social="${member.socialLinks}">
+                <li>${social.platform}: <a href="${social.url}">${social.url}</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<strong>sly-repeat-test</strong>
+<div class="sly-repeat-test">
+    <ul data-sly-use.model="com.buyzon.core.models.TeamMembersModel">
+        <li data-sly-repeat.member="${model.teamMembers}">
+            <strong>${member.name}</strong> - ${member.role}
+            <ul data-sly-repeat.social="${member.socialLinks}">
+                <li>${social.platform}: <a href="${social.url}">${social.url}</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<ul data-sly-use.model="com.buyzon.core.models.TeamMembersModel">
+    <li data-sly-list="${model.allCountryDetails}">
+        ${item}
+    </li>
+</ul>
