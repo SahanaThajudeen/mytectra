@@ -33,3 +33,19 @@
     <h2>Greeting Message:</h2>
     <p>${model.message}</p>
 </div>
+
+<div data-sly-use.model="com.buyzon.core.models.ProductModel">
+    <ul>
+        <li data-sly-list="${model.products}">
+            ${item.name} - ₹${item.price}
+        </li>
+    </ul>
+</div>
+<strong>Implementation of POJOS</strong>
+<div data-sly-use.model="com.buyzon.core.models.ProductModel">
+    <ul>
+        <li data-sly-list="${model.products}">
+            ${item.name} - ₹${item.price}
+        </li>
+    </ul>
+</div>

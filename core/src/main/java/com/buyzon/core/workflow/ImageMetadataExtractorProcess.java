@@ -28,23 +28,23 @@ public class ImageMetadataExtractorProcess implements WorkflowProcess {
     public void execute(WorkItem workItem, WorkflowSession workflowSession, MetaDataMap metaData) throws WorkflowException {
         try {
             String payloadPath = workItem.getWorkflowData().getPayload().toString();
-            LOG.info("🔍 Processing asset at path: {}", payloadPath);
+            LOG.info("Processing asset at path: {}", payloadPath);
 
             ResourceResolver resolver = workflowSession.adaptTo(ResourceResolver.class);
             if (resolver == null) {
-                LOG.info("❌ Could not adapt WorkflowSession to ResourceResolver");
+                LOG.info("Could not adapt WorkflowSession to ResourceResolver");
                 return;
             }
 
             Resource assetResource = resolver.getResource(payloadPath);
             if (assetResource == null) {
-                LOG.info("⚠️ Asset resource not found at path: {}", payloadPath);
+                LOG.info("Asset resource not found at path: {}", payloadPath);
                 return;
             }
 
             Resource original = assetResource.getChild("jcr:content/metadata");
             if (original == null) {
-                LOG.info("⚠️ Metadata node not found under asset");
+                LOG.info("Metadata node not found under asset");
                 return;
             }
 
@@ -52,11 +52,11 @@ public class ImageMetadataExtractorProcess implements WorkflowProcess {
             String title = metadata.get("dc:title", "");
             String creator = metadata.get("dc:creator", "");
 
-            LOG.info("🎨 Asset Title: {}", title.isEmpty() ? "N/A" : title);
-            LOG.info("🧑‍🎨 Asset Creator: {}", creator.isEmpty() ? "N/A" : creator);
+            LOG.info(" Asset Title: {}", title.isEmpty() ? "N/A" : title);
+            LOG.info(" Asset Creator: {}", creator.isEmpty() ? "N/A" : creator);
 
         } catch (Exception e) {
-            LOG.error("📛 Failed to process asset metadata", e);
+            LOG.error(" Failed to process asset metadata", e);
         }
     }
 }
